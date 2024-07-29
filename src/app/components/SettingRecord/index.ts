@@ -1,0 +1,1 @@
+export { SettingRecord } from "./SettingRecord";
