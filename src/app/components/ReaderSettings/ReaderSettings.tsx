@@ -5,9 +5,10 @@ import { Toggle } from "@/lib/ui/Toggle";
 import { SelectCarousel } from "@/lib/ui/SelectCarousel";
 import {
   readerFontsSettingsOptions,
-  readerThemeSettingsOptions,
   readerVisibilitySettingsOptions,
 } from "@/domains/reader/readerConstants";
+import { themeOptionsMap } from "@/domains/common/commonConstants";
+import { useTheme } from "@/domains/common/hooks/useTheme";
 import CommentsIcon from "./assets/icons/comments_icon.svg";
 import FontsIcon from "./assets/icons/fonts-icon.svg";
 import TextIcon from "./assets/icons/text-icon.svg";
@@ -16,6 +17,7 @@ import WidthOfFieldsIcon from "./assets/icons/width-of-fields-icon.svg";
 import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
 
 export function ReaderSettings() {
+  const { themeOption, onChangeTheme } = useTheme();
   return (
     <div>
       <div className="grid grid-cols-[88px_1fr] items-center justify-center gap-8">
@@ -34,8 +36,10 @@ export function ReaderSettings() {
         <Slider />
         <SettingRecordField icon={<ThemeIcon />} title="Колір теми" />
         <Toggle
-          option1={readerThemeSettingsOptions[0]}
-          option2={readerThemeSettingsOptions[1]}
+          option1={themeOptionsMap.light}
+          option2={themeOptionsMap.dark}
+          value={themeOption}
+          onChange={onChangeTheme}
           name="theme"
         />
         <SettingRecordField icon={<WidthOfFieldsIcon />} title="Шрифт" />

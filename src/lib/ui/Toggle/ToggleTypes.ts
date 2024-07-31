@@ -1,10 +1,10 @@
 import { Option } from "../types";
 
-export interface ToggleProps {
-  option1: Option;
-  option2: Option;
-  value?: Option;
+export interface ToggleProps<L extends React.ReactNode, V extends string> {
+  option1: Option<L, V>;
+  option2: Option<L, V>;
+  value?: Option<L, V>;
   name: string;
   className?: string;
-  onChange?: (o: Option) => void;
+  onChange?: (o: Option<L, V>) => void;
 }

@@ -3,23 +3,23 @@ import { useState } from "react";
 import { ToggleProps } from "./ToggleTypes";
 import { Option } from "../types";
 
-export const SelectCarousel = ({
+export const SelectCarousel = <L extends React.ReactNode, V extends string>({
   className,
   option1,
   option2,
   value,
   name,
   onChange,
-}: ToggleProps) => {
-  const [opt, setOpt] = useState<Option>(value || option1);
+}: ToggleProps<L, V>) => {
+  const [opt, setOpt] = useState<Option<L, V>>(value || option1);
   const options = [option1, option2];
 
-  const getChangeHandler = (o: Option) => () => {
+  const getChangeHandler = (o: Option<L, V>) => () => {
     if (onChange) onChange(o);
     else setOpt(o);
   };
 
-  const currentOption = onChange ? (value as Option) : opt;
+  const currentOption = onChange ? (value as Option<L, V>) : opt;
 
   return (
     <div className={clsx("", className)}>

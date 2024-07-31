@@ -10,8 +10,3 @@ export const readerFontsSettingsOptions: Option[] = [
   { value: "roboto", label: "Roboto" },
   { value: "times-new-roman", label: "Times new roman" },
 ];
-
-export const readerThemeSettingsOptions: Option[] = [
-  { value: "light", label: "Світла" },
-  { value: "dark", label: "Темна" },
-];
