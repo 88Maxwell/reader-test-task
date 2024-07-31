@@ -1,11 +1,13 @@
 import { useTheme as useNextTheme } from "next-themes";
 import { useState } from "react";
-import { themeOptions, themeOptionsMap } from "../commonConstants";
-import { ThemeOption } from "../commonTypes";
+import { themeOptionsMap } from "../commonConstants";
+import { ThemeNames, ThemeOption } from "../commonTypes";
 
 export const useTheme = () => {
-  const [themeOption, setThemeOption] = useState<ThemeOption>(themeOptions[0]);
   const { theme: themeName, setTheme: setThemeName } = useNextTheme();
+  const [themeOption, setThemeOption] = useState<ThemeOption>(
+    themeOptionsMap[themeName as ThemeNames],
+  );
 
   const switchToDarkTheme = () => {
     setThemeOption(themeOptionsMap.dark);
