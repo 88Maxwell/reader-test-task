@@ -1,3 +1,6 @@
 import "./slider.scss";
+import { SliderProps } from "./SliderTypes";
 
-export const Slider = () => <input id="default-range" type="range" />;
+export const Slider = ({ className }: SliderProps) => (
+  <input className={className} id="default-range" type="range" />
+);

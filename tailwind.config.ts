@@ -6,7 +6,8 @@ const config: Config = {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic":
+          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       spacing: {
         4.5: "1.125rem",
@@ -14,6 +15,7 @@ const config: Config = {
       },
       borderRadius: {
         "1.5xl": "0.875rem",
+        "2.5xl": "1.125rem",
       },
       colors: {
         "light-gray-600": "#424957",

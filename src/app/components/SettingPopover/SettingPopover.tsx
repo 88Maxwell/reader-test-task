@@ -7,7 +7,7 @@ export const SettingPopover = (props: Omit<PopoverProps, "children">) => (
     <div
       className={clsx(
         "min-w-96 absolute top-9 -right-7.5 rounded-1.5xl px-6 py-8 border border-solid",
-        "dark:bg-dark-background-field-contrast dark:border-black/70",
+        "dark:bg-[#232323] dark:border-black/70", // TODO: no color in design
       )}
     >
       <ReaderSettings />
