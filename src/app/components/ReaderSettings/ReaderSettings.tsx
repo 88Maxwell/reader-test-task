@@ -3,24 +3,17 @@ import { Switch } from "@/lib/ui/Switch";
 import { Slider } from "@/lib/ui/Slider";
 import { Toggle } from "@/lib/ui/Toggle";
 import { SelectCarousel } from "@/lib/ui/SelectCarousel";
-import { Option } from "@/lib/ui/types";
+import {
+  readerFontsSettingsOptions,
+  readerThemeSettingsOptions,
+  readerVisibilitySettingsOptions,
+} from "@/domains/reader/readerConstants";
 import CommentsIcon from "./assets/icons/comments_icon.svg";
 import FontsIcon from "./assets/icons/fonts-icon.svg";
 import TextIcon from "./assets/icons/text-icon.svg";
 import ThemeIcon from "./assets/icons/theme-icon.svg";
 import WidthOfFieldsIcon from "./assets/icons/width-of-fields-icon.svg";
 import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
-
-const readerVisibilitySettingsOptions: Option[] = [
-  { value: "hide", label: "Приховати" },
-  { value: "show", label: "Показувати" },
-];
-
-const readerFontsSettingsOptions: Option[] = [
-  { value: "arial", label: "Arial" },
-  { value: "roboto", label: "Roboto" },
-  { value: "times-new-roman", label: "Times new roman" },
-];
 
 export function ReaderSettings() {
   return (
@@ -33,7 +26,6 @@ export function ReaderSettings() {
         <Toggle
           option1={readerVisibilitySettingsOptions[0]}
           option2={readerVisibilitySettingsOptions[1]}
-          value={readerVisibilitySettingsOptions[1]}
           name="visibility"
         />
         <SettingRecordField icon={<FontsIcon />} title="Розмір тексту" />
@@ -41,7 +33,11 @@ export function ReaderSettings() {
         <SettingRecordField icon={<TextIcon />} title="Ширина полів" />
         <Slider />
         <SettingRecordField icon={<ThemeIcon />} title="Колір теми" />
-        <Slider />
+        <Toggle
+          option1={readerThemeSettingsOptions[0]}
+          option2={readerThemeSettingsOptions[1]}
+          name="theme"
+        />
         <SettingRecordField icon={<WidthOfFieldsIcon />} title="Шрифт" />
         <SelectCarousel name="font" options={readerFontsSettingsOptions} />
       </div>
