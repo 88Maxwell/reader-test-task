@@ -1,0 +1,125 @@
+:root {
+  --dark-primary: #8e3f66; // Основний колір обводки повзунка
+  --dark-thumb: #dadbdc; // Колір самого повзунка
+  --dark-track-filled: #8e3f66; // Колір заповненої частини треку
+  --dark-track-not-filled: #555; // Колір незаповненої частини треку
+}
+
+input[type="range"] {
+  -webkit-appearance: none; // Вимикає стандартний стиль для Chrome/Safari
+  appearance: none; // Вимикає стандартний стиль для всіх браузерів
+  width: 100%;
+  height: 4px;
+  background-color: var(--dark-track-not-filled);
+  cursor: pointer;
+  outline: none;
+  margin: 0;
+  padding: 0;
+  position: relative; // Потрібно для позиціонування псевдоелементів
+
+  &::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background-color: var(--dark-track-filled);
+    border-radius: 14px;
+    border: none;
+  }
+
+  &::-moz-range-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background-color: var(--dark-track-filled);
+    border-radius: 14px;
+    border: none;
+  }
+
+  &::-ms-track {
+    width: 100%;
+    height: 4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    color: transparent;
+    border-width: 6px 0;
+  }
+
+  &::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    border: 3px solid var(--dark-primary);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--dark-thumb);
+    margin-top: -6px; // Центрує повзунок по вертикалі
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+  }
+
+  &::-moz-range-thumb {
+    border: 3px solid var(--dark-primary);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--dark-thumb);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &::-ms-thumb {
+    border: 3px solid var(--dark-primary);
+    height: 16px;
+    width: 16px;
+    border-radius: 50%;
+    background: var(--dark-thumb);
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    box-shadow: 0 0 2px rgba(0, 0, 0, 0.5);
+  }
+
+  &::-ms-fill-lower {
+    background: var(--dark-track-filled);
+    border-radius: 14px;
+  }
+
+  &::-ms-fill-upper {
+    background: var(--dark-track-not-filled);
+    border-radius: 14px;
+  }
+
+  &:hover {
+    &::-webkit-slider-thumb {
+      background: var(--dark-thumb);
+      transform: scale(1.1); // Збільшує повзунок при ховері
+    }
+
+    &::-moz-range-thumb {
+      background: var(--dark-thumb);
+      transform: scale(1.1);
+    }
+
+    &::-ms-thumb {
+      background: var(--dark-thumb);
+      transform: scale(1.1);
+    }
+  }
+
+  // &::after {
+  //   content: "";
+  //   position: absolute;
+  //   top: 0;
+  //   left: 0;
+  //   height: 4px;
+  //   width: calc(var(--percentage) * 1%);
+  //   background: var(--dark-track-filled);
+  //   border-radius: 14px;
+  //   z-index: 1;
+  //   pointer-events: none;
+  // }
+}

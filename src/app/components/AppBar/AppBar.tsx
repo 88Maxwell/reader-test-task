@@ -13,8 +13,8 @@ import { ReaderSettings } from "../ReaderSettings/ReaderSettings";
 
 export function AppBar() {
   const fakeUser = {
-    name      : "Fake name",
-    avatarUrl : "https://i.pravatar.cc/24?u=a042581f4e29026704d",
+    name: "Fake name",
+    avatarUrl: "https://i.pravatar.cc/24?u=a042581f4e29026704d",
   };
 
   return (
@@ -64,7 +64,7 @@ export function AppBar() {
           <MoreHorizontalIcon />
         </IconButton>
 
-        <div className="min-w-96 absolute top-0 right-0 shadow-gray-800 rounded-1.5xl dark:bg-dark-background-quaternary-surface px-6 py-8">
+        <div className="min-w-96 absolute top-0 right-0 shadow-gray-800 rounded-1.5xl dark:bg-dark-background-field-contrast px-6 py-8">
           <ReaderSettings />
         </div>
       </section>

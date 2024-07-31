@@ -1,20 +1,15 @@
 import type { Config } from "tailwindcss";
 
 const config: Config = {
-  content: [
-    "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./src/app/**/*.{js,ts,jsx,tsx,mdx}",
-  ],
+  content: ["./src/**/*.{js,ts,jsx,tsx,mdx}"],
   theme: {
     extend: {
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
-        "gradient-conic":
-          "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
+        "gradient-conic": "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
       spacing: {
-        "4.5": "1.125rem",
+        4.5: "1.125rem",
       },
       borderRadius: {
         "1.5xl": "0.875rem",
@@ -30,6 +25,13 @@ const config: Config = {
         "dark-background-quaternary-surface": "#3D3D3D",
         "dark-stroke-divider-primary": "#3D3D3D",
         "light-stroke-divider-primary": "#E1E3E6", // TODO: add color to design
+        "switch-base": "#D5D5D6", // TODO: Add color to figma
+        "dark-brand-brand": "#8E3F66",
+        "light-label-dark-main-text": "#FFFFFF",
+        "dark-background-tertiary": "#3D3D3D",
+        "light-button-light-enabled": "#83325A",
+        "dark-background-field-contrast": "#363636",
+        "dark-stroke-tertiary": "#555",
       },
     },
   },

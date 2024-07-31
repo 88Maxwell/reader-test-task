@@ -7,8 +7,8 @@ import { AppBar } from "./components/AppBar/AppBar";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title       : "Booknet Reader",
-  description : "Booknet Test task",
+  title: "Booknet Reader",
+  description: "Booknet Test task",
 };
 
 export default function RootLayout({ children }: PropsWithChildren) {

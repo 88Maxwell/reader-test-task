@@ -9,7 +9,7 @@ export function Divider({ className = "" }: DividerProps) {
     <hr
       className={clsx(
         "w-full h-1",
-        "bg-light-stroke-divider-primary dark:bg-dark-stroke-divider-primary",
+        "border-none bg-light-stroke-divider-primary dark:bg-dark-stroke-divider-primary",
         className,
       )}
     />

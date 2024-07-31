@@ -17,6 +17,8 @@ module.exports = {
   },
   rules: {
     "react/require-default-props": 0,
+    "react/function-component-definition": 0,
+    "jsx-a11y/label-has-associated-control": 0,
     "import/no-cycle": 0,
     "import/extensions": 0,
     "react/react-in-jsx-scope": 0,
@@ -27,20 +29,6 @@ module.exports = {
       2,
       {
         int32Hint: true,
-      },
-    ],
-    "key-spacing": [
-      2,
-      {
-        singleLine: {
-          beforeColon: false,
-          afterColon: true,
-        },
-        multiLine: {
-          beforeColon: true,
-          afterColon: true,
-          align: "colon",
-        },
       },
     ],
     "react/jsx-indent": ["error", 2],
