@@ -2,6 +2,8 @@ import { Divider } from "@/lib/ui/Divider";
 import { Switch } from "@/lib/ui/Switch";
 import { Slider } from "@/lib/ui/Slider";
 import { Toggle } from "@/lib/ui/Toggle";
+import { SelectCarousel } from "@/lib/ui/SelectCarousel";
+import { Option } from "@/lib/ui/types";
 import CommentsIcon from "./assets/icons/comments_icon.svg";
 import FontsIcon from "./assets/icons/fonts-icon.svg";
 import TextIcon from "./assets/icons/text-icon.svg";
@@ -9,9 +11,15 @@ import ThemeIcon from "./assets/icons/theme-icon.svg";
 import WidthOfFieldsIcon from "./assets/icons/width-of-fields-icon.svg";
 import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
 
-const readerVisibilitySettingsOptions = [
+const readerVisibilitySettingsOptions: Option[] = [
   { value: "hide", label: "Приховати" },
   { value: "show", label: "Показувати" },
+];
+
+const readerFontsSettingsOptions: Option[] = [
+  { value: "arial", label: "Arial" },
+  { value: "roboto", label: "Roboto" },
+  { value: "times-new-roman", label: "Times new roman" },
 ];
 
 export function ReaderSettings() {
@@ -35,7 +43,7 @@ export function ReaderSettings() {
         <SettingRecordField icon={<ThemeIcon />} title="Колір теми" />
         <Slider />
         <SettingRecordField icon={<WidthOfFieldsIcon />} title="Шрифт" />
-        <Slider />
+        <SelectCarousel name="font" options={readerFontsSettingsOptions} />
       </div>
       <Divider className="mt-7.5 mb-4" />
       <div className="flex flex-row justify-between">

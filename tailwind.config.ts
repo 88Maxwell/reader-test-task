@@ -35,6 +35,7 @@ const config: Config = {
         "light-button-light-enabled": "#83325A",
         "dark-background-field-contrast": "#363636",
         "dark-stroke-tertiary": "#555",
+        "dark-label-disabled": "#636567",
       },
     },
   },

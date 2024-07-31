@@ -1,8 +1,7 @@
 import { Option } from "../types";
 
-export interface ToggleProps {
-  option1: Option;
-  option2: Option;
+export interface SelectCarouselProps {
+  options: Option[];
   value?: Option;
   name: string;
   className?: string;

@@ -1,1 +1,1 @@
-export { Toggle } from "./Toggle";
+export { SelectCarousel as Toggle } from "./Toggle";

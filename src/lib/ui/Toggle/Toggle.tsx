@@ -3,7 +3,7 @@ import { useState } from "react";
 import { ToggleProps } from "./ToggleTypes";
 import { Option } from "../types";
 
-export const Toggle = ({
+export const SelectCarousel = ({
   className,
   option1,
   option2,
@@ -11,7 +11,7 @@ export const Toggle = ({
   name,
   onChange,
 }: ToggleProps) => {
-  const [opt, setOpt] = useState<Option>(value);
+  const [opt, setOpt] = useState<Option>(value || option1);
   const options = [option1, option2];
 
   const getChangeHandler = (o: Option) => () => {
@@ -19,14 +19,14 @@ export const Toggle = ({
     else setOpt(o);
   };
 
-  const currentOption = onChange ? value : opt;
+  const currentOption = onChange ? (value as Option) : opt;
 
   return (
     <div className={clsx("", className)}>
       <select name={name} className="hidden">
         {options.map((o) => (
           <option value={o.value} key={`toggle-${o.value}-option`}>
-            {option1.label}
+            {o.label}
           </option>
         ))}
       </select>
