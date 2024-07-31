@@ -1,7 +1,10 @@
+"use client";
+
 import { Button } from "@/lib/ui/Button";
 import { IconButton } from "@/lib/ui/IconButton";
 import clsx from "clsx";
 import { Avatar } from "@/lib/ui/Avatar";
+import { useRef, useState } from "react";
 import BookOpenIcon from "./assets/icons/book_open_icon.svg";
 import BooksIcon from "./assets/icons/books_icon.svg";
 import MoreHorizontalIcon from "./assets/icons/more_horizontal_icon.svg";
@@ -9,13 +12,18 @@ import NumberedListLeftIcon from "./assets/icons/numbered_list_left_icon.svg";
 import SettingsIcon from "./assets/icons/settings_icon.svg";
 import ArrowLeftIcon from "./assets/icons/arrow-left.svg";
 import ShareIcon from "./assets/icons/share_icon.svg";
-import { ReaderSettings } from "../ReaderSettings/ReaderSettings";
+import { SettingPopover } from "../SettingPopover/SettingPopover";
+
+const fakeUser = {
+  name: "Fake name",
+  avatarUrl: "https://i.pravatar.cc/24?u=a042581f4e29026704d",
+};
 
 export function AppBar() {
-  const fakeUser = {
-    name: "Fake name",
-    avatarUrl: "https://i.pravatar.cc/24?u=a042581f4e29026704d",
-  };
+  const settingsButtonRef = useRef<HTMLButtonElement>(null);
+  const [isSettingOpen, setIsSettingOpen] = useState(false);
+  const handleOpenSetting = () => setIsSettingOpen(true);
+  const handleCloseSetting = () => setIsSettingOpen(false);
 
   return (
     <nav
@@ -57,16 +65,21 @@ export function AppBar() {
         <IconButton>
           <ShareIcon />
         </IconButton>
-        <IconButton>
+        <IconButton
+          ref={settingsButtonRef}
+          onClick={handleOpenSetting}
+          className="relative"
+        >
           <SettingsIcon />
+          <SettingPopover
+            anchorRef={settingsButtonRef}
+            isOpen={isSettingOpen}
+            onClose={handleCloseSetting}
+          />
         </IconButton>
         <IconButton>
           <MoreHorizontalIcon />
         </IconButton>
-
-        <div className="min-w-96 absolute top-0 right-0 shadow-gray-800 rounded-1.5xl dark:bg-dark-background-field-contrast px-6 py-8">
-          <ReaderSettings />
-        </div>
       </section>
     </nav>
   );

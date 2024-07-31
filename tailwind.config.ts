@@ -10,6 +10,7 @@ const config: Config = {
       },
       spacing: {
         4.5: "1.125rem",
+        7.5: "1.875rem",
       },
       borderRadius: {
         "1.5xl": "0.875rem",

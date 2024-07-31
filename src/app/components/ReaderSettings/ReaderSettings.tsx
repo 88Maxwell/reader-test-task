@@ -8,8 +8,6 @@ import ThemeIcon from "./assets/icons/theme-icon.svg";
 import WidthOfFieldsIcon from "./assets/icons/width-of-fields-icon.svg";
 import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
 
-/* <div className="flex flex-row justify-between text-light-gray-600 dark:text-white"> */
-
 export function ReaderSettings() {
   return (
     <div className="flex flex-col gap-8">

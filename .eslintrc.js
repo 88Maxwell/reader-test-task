@@ -19,12 +19,14 @@ module.exports = {
     "react/require-default-props": 0,
     "react/function-component-definition": 0,
     "jsx-a11y/label-has-associated-control": 0,
+    "react-hooks/exhaustive-deps": 0,
     "import/no-cycle": 0,
     "import/extensions": 0,
     "react/react-in-jsx-scope": 0,
     "no-console": "error",
     "react/jsx-filename-extension": 0,
     "linebreak-style": 0,
+    "object-curly-newline": "off",
     "space-infix-ops": [
       2,
       {
@@ -48,7 +50,6 @@ module.exports = {
       },
     ],
     "@typescript-eslint/indent": ["error", 2],
-    "object-curly-spacing": ["warn", "always"],
     "no-unused-vars": [
       "warn",
       {
