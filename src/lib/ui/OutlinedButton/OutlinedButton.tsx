@@ -1,5 +1,5 @@
 import clsx from "clsx";
-import { OutlinedButtonProps } from "./OutlinedButtonTypes";
+import type { OutlinedButtonProps } from "./OutlinedButtonTypes";
 
 // Better to use Button.variant === "outlined", but in this case good enough
 export function OutlinedButton({

@@ -1,6 +1,6 @@
 import clsx from "clsx";
 import { forwardRef } from "react";
-import { ButtonProps } from "./IconButtonTypes";
+import type { ButtonProps } from "./IconButtonTypes";
 
 export const IconButton = forwardRef(
   (

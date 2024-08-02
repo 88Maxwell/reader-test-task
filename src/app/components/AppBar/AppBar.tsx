@@ -13,7 +13,7 @@ import SettingsIcon from "./assets/icons/settings_icon.svg";
 import ArrowLeftIcon from "./assets/icons/arrow-left.svg";
 import ShareIcon from "./assets/icons/share_icon.svg";
 import { SettingPopover } from "../SettingPopover/SettingPopover";
-import { AppBarProps } from "./AppBarTypes";
+import type { AppBarProps } from "./AppBarTypes";
 
 const fakeUser = {
   name: "Fake name",

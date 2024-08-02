@@ -1,9 +1,9 @@
 import clsx from "clsx";
 import { useState } from "react";
-import { SelectCarouselProps } from "./SelectCarouselTypes";
-import { Option } from "../types";
-import ArrowRightIcon from "./arrow-right.svg";
 import { IconButton } from "../IconButton";
+import type { Option } from "../types";
+import type { SelectCarouselProps } from "./SelectCarouselTypes";
+import ArrowRightIcon from "./arrow-right.svg";
 
 export const SelectCarousel = ({
   className,

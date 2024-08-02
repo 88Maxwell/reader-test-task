@@ -5,6 +5,7 @@ import { Toggle } from "@/lib/ui/Toggle";
 import { SelectCarousel } from "@/lib/ui/SelectCarousel";
 import {
   readerFontsSettingsOptions,
+  readerModeOptionsMap,
   readerVisibilitySettingsOptions,
 } from "@/domains/reader/readerConstants";
 import { themeOptionsMap } from "@/domains/common/commonConstants";
@@ -15,7 +16,7 @@ import TextIcon from "./assets/icons/text-icon.svg";
 import ThemeIcon from "./assets/icons/theme-icon.svg";
 import WidthOfFieldsIcon from "./assets/icons/width-of-fields-icon.svg";
 import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
-import { ReaderSettingsProps } from "./ReaderSettingsTypes";
+import type { ReaderSettingsProps } from "./ReaderSettingsTypes";
 
 export function ReaderSettings({ className }: ReaderSettingsProps) {
   const { themeOption, onChangeTheme } = useTheme();
@@ -34,14 +35,33 @@ export function ReaderSettings({ className }: ReaderSettingsProps) {
         />
         <SettingRecordField icon={<FontsIcon />} title="Розмір тексту" />
         <Slider leftTitle="Менше" rightTitle="Більше" />
-        <SettingRecordField icon={<TextIcon />} title="Ширина полів" />
-        <Slider leftTitle="Менше" rightTitle="Більше" />
+        <SettingRecordField
+          className="hidden-mobile-flex"
+          icon={<TextIcon />}
+          title="Ширина полів"
+        />
+        <Slider
+          className="hidden-mobile-flex"
+          leftTitle="Менше"
+          rightTitle="Більше"
+        />
         <SettingRecordField icon={<ThemeIcon />} title="Колір теми" />
         <Toggle
           option1={themeOptionsMap.light}
           option2={themeOptionsMap.dark}
           value={themeOption}
           onChange={onChangeTheme}
+          name="theme"
+        />
+        <SettingRecordField
+          className="md:hidden"
+          icon={<ThemeIcon />}
+          title="Колір теми"
+        />
+        <Toggle
+          className="md:hidden"
+          option1={readerModeOptionsMap.topToBottom}
+          option2={readerModeOptionsMap.leftToRight}
           name="theme"
         />
         <SettingRecordField icon={<WidthOfFieldsIcon />} title="Шрифт" />
@@ -52,8 +72,8 @@ export function ReaderSettings({ className }: ReaderSettingsProps) {
         <span>Перенос тексту</span>
         <Switch />
       </div>
-      <Divider className="my-4" />
-      <div className="flex flex-row justify-between">
+      <Divider className="hidden-mobile-block my-4" />
+      <div className="hidden-mobile-block flex flex-row justify-between">
         <span>Книжний режим прочитання</span>
         <Switch />
       </div>

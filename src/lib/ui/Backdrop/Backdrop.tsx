@@ -1,4 +1,4 @@
-import { BackdropProps } from "./BackdropTypes";
+import type { BackdropProps } from "./BackdropTypes";
 
 export const Backdrop = ({ onClose }: BackdropProps) => (
   <div

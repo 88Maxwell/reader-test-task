@@ -1,4 +1,4 @@
-import { ThemeNames, ThemeOption } from "./commonTypes";
+import type { ThemeNames, ThemeOption } from "./commonTypes";
 
 export const themeOptions: ThemeOption[] = [
   { value: "light", label: "Світла" },

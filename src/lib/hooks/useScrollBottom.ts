@@ -22,5 +22,5 @@ export const useScrollBottom = (cb: Cb, initiate?: Cb) => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [cb,initiate]);
 };

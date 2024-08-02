@@ -1,4 +1,4 @@
-import { Option } from "../types";
+import type { Option } from "../types";
 
 export interface ToggleProps<L extends React.ReactNode, V extends string> {
   option1: Option<L, V>;

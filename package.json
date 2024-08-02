@@ -7,10 +7,12 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "prettify": "npx prettier . --write",
     "test:types": "tsc --noEmit --incremental && rm ./tsconfig.tsbuildinfo",
-    "test:lint": "eslint src --ext js,jsx,ts,tsx --color",
-    "test:lint:fix": "eslint src --ext js,jsx,ts,tsx --color --fix"
+    "format": "npx @biomejs/biome format --write src",
+    "test:lint:fix": "npx @biomejs/biome lint --fix src",
+    "test:lint": "npx @biomejs/biome check src",
+    "test:lint:summary": "npx @biomejs/biome check --reporter=summary src"
+    
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
@@ -24,27 +26,12 @@
     "swiper": "^11.1.9"
   },
   "devDependencies": {
+    "@biomejs/biome": "1.8.3",
     "@svgr/webpack": "^8.1.0",
     "@types/node": "^20",
     "@types/react": "^18",
     "@types/react-dom": "^18",
-    "@typescript-eslint/eslint-plugin": "^5.62.0",
-    "@typescript-eslint/parser": "^5.62.0",
-    "@typescript-eslint/typescript-estree": "^7.18.0",
-    "eslint": "^8.31.0",
-    "eslint-config-airbnb": "^19.0.4",
-    "eslint-config-airbnb-typescript": "^17.0.0",
-    "eslint-config-next": "14.2.5",
-    "eslint-import-resolver-typescript": "^3.5.2",
-    "eslint-plugin-import": "npm:eslint-plugin-i@^2.27.5-4",
-    "eslint-plugin-jsx-a11y": "^6.6.0",
-    "eslint-plugin-prettier": "^4.2.1",
-    "eslint-plugin-react": "^7.31.11",
-    "eslint-plugin-react-hooks": "^4.6.0",
-    "eslint-plugin-vitest": "^0.0.23",
     "postcss": "^8",
-    "prettier": "3.3.3",
-    "prettier-eslint": "^15.0.1",
     "tailwindcss": "^3.4.1",
     "typescript": "^5"
   }

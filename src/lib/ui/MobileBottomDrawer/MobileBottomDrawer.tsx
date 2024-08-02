@@ -2,7 +2,7 @@
 
 import clsx from "clsx";
 import { Backdrop } from "../Backdrop";
-import { MobileBottomDrawerProps } from "./MobileBottomDrawerTypes";
+import type { MobileBottomDrawerProps } from "./MobileBottomDrawerTypes";
 import { IconButton } from "../IconButton";
 import CrossIcon from "./close-icon.svg";
 

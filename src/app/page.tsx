@@ -1,14 +1,14 @@
 "use client";
 
-import clsx from "clsx";
-import { MobileReaderCenterTapZone } from "@/domains/reader/components/MobileReaderCenterTapZone/MobileReaderCenterTapZone";
-import { useState } from "react";
-import { useScrollBottom } from "@/lib/hooks/useScrollBottom";
 import { MobileReaderBottomSwipeZone } from "@/domains/reader/components/MobileReaderBottomSwipeZone";
+import { MobileReaderCenterTapZone } from "@/domains/reader/components/MobileReaderCenterTapZone/MobileReaderCenterTapZone";
+import { useScrollBottom } from "@/lib/hooks/useScrollBottom";
 import { MobileBottomDrawer } from "@/lib/ui/MobileBottomDrawer";
-import { TEXT } from "./stubData";
+import clsx from "clsx";
+import { useState } from "react";
 import { AppBar } from "./components/AppBar/AppBar";
 import { ReaderSettings } from "./components/ReaderSettings/ReaderSettings";
+import { TEXT } from "./stubData";
 
 export default function Home() {
   const [appBarShown, setAppBarShow] = useState(true);

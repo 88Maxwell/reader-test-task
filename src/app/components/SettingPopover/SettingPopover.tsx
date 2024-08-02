@@ -1,4 +1,4 @@
-import { Popover, PopoverProps } from "@/lib/ui/Popover";
+import { Popover, type PopoverProps } from "@/lib/ui/Popover";
 import clsx from "clsx";
 import { ReaderSettings } from "../ReaderSettings/ReaderSettings";
 

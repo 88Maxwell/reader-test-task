@@ -1,7 +1,7 @@
 import clsx from "clsx";
 import { useState } from "react";
-import { ToggleProps } from "./ToggleTypes";
-import { Option } from "../types";
+import type { ToggleProps } from "./ToggleTypes";
+import type { Option } from "../types";
 
 export const SelectCarousel = <L extends React.ReactNode, V extends string>({
   className,

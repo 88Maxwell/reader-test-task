@@ -1,6 +1,6 @@
 import Image from "next/image";
 import clsx from "clsx";
-import { AvatarProps } from "./AvatarTypes";
+import type { AvatarProps } from "./AvatarTypes";
 
 export function Avatar({ className, ...imageProps }: AvatarProps) {
   return (

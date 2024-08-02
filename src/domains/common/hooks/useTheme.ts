@@ -1,7 +1,7 @@
 import { useTheme as useNextTheme } from "next-themes";
 import { useState } from "react";
 import { themeOptionsMap } from "../commonConstants";
-import { ThemeNames, ThemeOption } from "../commonTypes";
+import type { ThemeNames, ThemeOption } from "../commonTypes";
 
 export const useTheme = () => {
   const { theme: themeName, setTheme: setThemeName } = useNextTheme();
