@@ -1,6 +1,6 @@
 "use client";
 
-import { Button } from "@/lib/ui/Button";
+import { OutlinedButton } from "@/lib/ui/OutlinedButton";
 import { IconButton } from "@/lib/ui/IconButton";
 import clsx from "clsx";
 import { Avatar } from "@/lib/ui/Avatar";
@@ -50,7 +50,7 @@ export function AppBar() {
             {fakeUser.name}
           </span>
         </div>
-        <Button>subscribe</Button>
+        <OutlinedButton>Підписатись</OutlinedButton>
       </section>
       <section className="flex flex-row gap-6 text-light-gray-600 dark:text-white">
         <IconButton>
