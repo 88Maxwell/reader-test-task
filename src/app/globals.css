@@ -12,4 +12,12 @@
   .text-balance {
     text-wrap: balance;
   }
+
+  .hidden-mobile-button {
+    @apply hidden md:inline-block
+  }
+
+  .hidden-mobile-block {
+    @apply hidden md:block
+  }
 }

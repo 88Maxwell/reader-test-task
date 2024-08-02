@@ -36,10 +36,10 @@ export function AppBar() {
         <IconButton>
           <ArrowLeftIcon />
         </IconButton>
-        <h1 className="text-light-label-light-main-text dark:text-dark-label-sub-head mr-2">
+        <h1 className="text-light-label-light-main-text dark:text-dark-label-sub-head mr-2 hidden-mobile-block">
           Назва книги
         </h1>
-        <div className="flex flex-row items-center gap-2">
+        <div className="flex flex-row items-center gap-2 hidden-mobile-block">
           <Avatar
             width={24}
             height={24}
@@ -50,7 +50,9 @@ export function AppBar() {
             {fakeUser.name}
           </span>
         </div>
-        <OutlinedButton>Підписатись</OutlinedButton>
+        <OutlinedButton className="hidden-mobile-button">
+          Підписатись
+        </OutlinedButton>
       </section>
       <section className="flex flex-row gap-6 text-light-gray-600 dark:text-white">
         <IconButton>
@@ -59,10 +61,10 @@ export function AppBar() {
         <IconButton>
           <BooksIcon />
         </IconButton>
-        <IconButton>
+        <IconButton className="hidden-mobile-button">
           <BookOpenIcon />
         </IconButton>
-        <IconButton>
+        <IconButton className="hidden-mobile-button">
           <ShareIcon />
         </IconButton>
         <IconButton
