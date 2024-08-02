@@ -1,0 +1,1 @@
+export { MobileReaderCenterTapZone } from "./MobileReaderCenterTapZone";

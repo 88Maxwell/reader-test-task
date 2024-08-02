@@ -1,8 +1,8 @@
 import { useEffect, useRef } from "react";
 
-type UseScrollBottomCb = () => void;
+type Cb = () => void;
 
-export const useScrollBottom = (cb: UseScrollBottomCb) => {
+export const useScrollBottom = (cb: Cb, initiate?: Cb) => {
   const lastScrollPositionRef = useRef(0);
 
   useEffect(() => {
@@ -11,7 +11,11 @@ export const useScrollBottom = (cb: UseScrollBottomCb) => {
     const handleScroll = () => {
       const scrollPositionDiff = window.scrollY - lastScrollPositionRef.current;
       const isScrollToBottom = scrollPositionDiff > 0;
-      if (isScrollToBottom) cb();
+      const isOnTop = window.scrollY === 0;
+
+      if (isOnTop) initiate?.();
+      else if (isScrollToBottom) cb();
+
       lastScrollPositionRef.current = window.scrollY;
     };
     window.addEventListener("scroll", handleScroll);

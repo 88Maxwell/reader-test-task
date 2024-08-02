@@ -1,22 +1,34 @@
 "use client";
 
 import clsx from "clsx";
-import { BottomDrawer } from "@/lib/ui/MobileBottomDrawer/MobileBottomDrawer";
 import { MobileReaderCenterTapZone } from "@/domains/reader/components/MobileReaderCenterTapZone/MobileReaderCenterTapZone";
 import { useState } from "react";
 import { useScrollBottom } from "@/lib/hooks/useScrollBottom";
+import { MobileReaderBottomSwipeZone } from "@/domains/reader/components/MobileReaderBottomSwipeZone";
+import { MobileBottomDrawer } from "@/lib/ui/MobileBottomDrawer";
 import { TEXT } from "./stubData";
 import { AppBar } from "./components/AppBar/AppBar";
+import { ReaderSettings } from "./components/ReaderSettings/ReaderSettings";
 
 export default function Home() {
   const [appBarShown, setAppBarShow] = useState(true);
-  const handleTap = () => setAppBarShow((v) => !v);
+  const [isSettingOpen, setIsSettingOpen] = useState(false);
+  const handleOpenSetting = () => setIsSettingOpen(true);
+  const handleCloseSetting = () => setIsSettingOpen(false);
 
-  useScrollBottom(() => setAppBarShow(false));
+  const showAppBar = () => setAppBarShow(true);
+  const hideAppBar = () => setAppBarShow(false);
+
+  useScrollBottom(hideAppBar, showAppBar);
 
   return (
     <>
-      <AppBar isOpen={appBarShown} />
+      <AppBar
+        isSettingsOpen={isSettingOpen}
+        onCloseSettings={handleCloseSetting}
+        onOpenSettings={handleOpenSetting}
+        isOpen={appBarShown}
+      />
       <main
         className={clsx(
           "min-h-screen pb-8 pt-24 px-4 md:pb-14 md:pt-[120px] md:px-[270px]",
@@ -30,9 +42,12 @@ export default function Home() {
             <p key={v}>{v}</p>
           ))}
         </div>
-        <BottomDrawer />
+        <MobileBottomDrawer isOpen={isSettingOpen} onClose={handleCloseSetting}>
+          <ReaderSettings className="p-6" />
+        </MobileBottomDrawer>
       </main>
-      <MobileReaderCenterTapZone onTap={handleTap} />
+      <MobileReaderBottomSwipeZone onSwipedUp={handleOpenSetting} />
+      <MobileReaderCenterTapZone onTap={showAppBar} />
     </>
   );
 }

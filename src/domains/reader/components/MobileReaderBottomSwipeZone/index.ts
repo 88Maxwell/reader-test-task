@@ -1,0 +1,1 @@
+export { MobileReaderBottomSwipeZone } from "./MobileReaderBottomSwipeZone";

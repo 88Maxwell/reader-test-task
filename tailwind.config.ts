@@ -50,6 +50,8 @@ const config: Config = {
         "light-gray-100": "#FBFBFB",
         "dark-label-secondary": "#969A9F",
         "light-label-light-secondary-text": "#71747A",
+        "light-icon-outline-medium": "#818C99",
+        "dark-icon-secondary": "#B0B1B6",
       },
     },
   },

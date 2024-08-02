@@ -4,7 +4,7 @@ import { OutlinedButton } from "@/lib/ui/OutlinedButton";
 import { IconButton } from "@/lib/ui/IconButton";
 import clsx from "clsx";
 import { Avatar } from "@/lib/ui/Avatar";
-import { useRef, useState } from "react";
+import { useRef } from "react";
 import BookOpenIcon from "./assets/icons/book_open_icon.svg";
 import BooksIcon from "./assets/icons/books_icon.svg";
 import MoreHorizontalIcon from "./assets/icons/more_horizontal_icon.svg";
@@ -20,11 +20,13 @@ const fakeUser = {
   avatarUrl: "https://i.pravatar.cc/24?u=a042581f4e29026704d",
 };
 
-export function AppBar({ isOpen }: AppBarProps) {
+export function AppBar({
+  isOpen,
+  isSettingsOpen,
+  onOpenSettings,
+  onCloseSettings,
+}: AppBarProps) {
   const settingsButtonRef = useRef<HTMLButtonElement>(null);
-  const [isSettingOpen, setIsSettingOpen] = useState(false);
-  const handleOpenSetting = () => setIsSettingOpen(true);
-  const handleCloseSetting = () => setIsSettingOpen(false);
 
   return (
     <nav
@@ -74,14 +76,15 @@ export function AppBar({ isOpen }: AppBarProps) {
         </IconButton>
         <IconButton
           ref={settingsButtonRef}
-          onClick={handleOpenSetting}
+          onClick={onOpenSettings}
           className="relative"
         >
           <SettingsIcon />
           <SettingPopover
+            className="hidden md:block"
             anchorRef={settingsButtonRef}
-            isOpen={isSettingOpen}
-            onClose={handleCloseSetting}
+            isOpen={isSettingsOpen}
+            onClose={onCloseSettings}
           />
         </IconButton>
         <IconButton>

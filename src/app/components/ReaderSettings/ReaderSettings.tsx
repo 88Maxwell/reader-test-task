@@ -15,11 +15,13 @@ import TextIcon from "./assets/icons/text-icon.svg";
 import ThemeIcon from "./assets/icons/theme-icon.svg";
 import WidthOfFieldsIcon from "./assets/icons/width-of-fields-icon.svg";
 import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
+import { ReaderSettingsProps } from "./ReaderSettingsTypes";
 
-export function ReaderSettings() {
+export function ReaderSettings({ className }: ReaderSettingsProps) {
   const { themeOption, onChangeTheme } = useTheme();
+
   return (
-    <div>
+    <div className={className}>
       <div className="grid grid-cols-[88px_1fr] items-center justify-center gap-8">
         <SettingRecordField
           icon={<CommentsIcon />}
