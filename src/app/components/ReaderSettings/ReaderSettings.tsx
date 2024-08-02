@@ -1,22 +1,22 @@
-import { Divider } from "@/lib/ui/Divider";
-import { Switch } from "@/lib/ui/Switch";
-import { Slider } from "@/lib/ui/Slider";
-import { Toggle } from "@/lib/ui/Toggle";
-import { SelectCarousel } from "@/lib/ui/SelectCarousel";
+import { themeOptionsMap } from "@/domains/common/commonConstants";
+import { useTheme } from "@/domains/common/hooks/useTheme";
 import {
   readerFontsSettingsOptions,
   readerModeOptionsMap,
   readerVisibilitySettingsOptions,
 } from "@/domains/reader/readerConstants";
-import { themeOptionsMap } from "@/domains/common/commonConstants";
-import { useTheme } from "@/domains/common/hooks/useTheme";
+import { Divider } from "@/lib/ui/Divider";
+import { SelectCarousel } from "@/lib/ui/SelectCarousel";
+import { Slider } from "@/lib/ui/Slider";
+import { Switch } from "@/lib/ui/Switch";
+import { Toggle } from "@/lib/ui/Toggle";
+import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
+import type { ReaderSettingsProps } from "./ReaderSettingsTypes";
 import CommentsIcon from "./assets/icons/comments_icon.svg";
 import FontsIcon from "./assets/icons/fonts-icon.svg";
 import TextIcon from "./assets/icons/text-icon.svg";
 import ThemeIcon from "./assets/icons/theme-icon.svg";
 import WidthOfFieldsIcon from "./assets/icons/width-of-fields-icon.svg";
-import { SettingRecordField } from "../SettingRecordField/SettingRecordField";
-import type { ReaderSettingsProps } from "./ReaderSettingsTypes";
 
 export function ReaderSettings({ className }: ReaderSettingsProps) {
   const { themeOption, onChangeTheme } = useTheme();

@@ -7,6 +7,7 @@ declare module "*.svg" {
 
 declare module "*.svg?url" {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  // biome-ignore lint/suspicious/noExplicitAny: <Svgr problems TODO: research>
   const content: any;
   export default content;
 }

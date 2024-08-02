@@ -1,8 +1,10 @@
+import type { ReactNode, RefObject } from "react";
+
 export interface PopoverProps {
   isOpen: boolean;
   onClose: () => void;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
   withClickOutside?: boolean;
-  anchorRef: React.RefObject<HTMLElement>;
+  anchorRef: RefObject<HTMLElement>;
 }

@@ -1,11 +1,11 @@
 import clsx from "clsx";
-import { forwardRef } from "react";
+import { type ForwardedRef, forwardRef } from "react";
 import type { ButtonProps } from "./IconButtonTypes";
 
 export const IconButton = forwardRef(
   (
     { children, className, disabled, ...props }: ButtonProps,
-    ref: React.ForwardedRef<HTMLButtonElement>,
+    ref: ForwardedRef<HTMLButtonElement>,
   ) => (
     <button
       ref={ref}

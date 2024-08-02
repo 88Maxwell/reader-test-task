@@ -1,6 +1,6 @@
-import { useRef } from "react";
 import { useClickOutside } from "@/lib/hooks/useClickOutside";
 import clsx from "clsx";
+import { useRef } from "react";
 import type { PopoverProps } from "./PopoverTypes";
 
 export const Popover = ({

@@ -1,8 +1,8 @@
-import type { PropsWithChildren } from "react";
+import type { PropsWithChildren, ReactNode } from "react";
 
 export interface MobileBottomDrawerProps extends PropsWithChildren {
   onClose: () => void;
   isOpen: boolean;
-  children: React.ReactNode;
+  children: ReactNode;
   className?: string;
 }

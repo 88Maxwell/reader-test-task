@@ -2,8 +2,8 @@
 
 import clsx from "clsx";
 import { Backdrop } from "../Backdrop";
-import type { MobileBottomDrawerProps } from "./MobileBottomDrawerTypes";
 import { IconButton } from "../IconButton";
+import type { MobileBottomDrawerProps } from "./MobileBottomDrawerTypes";
 import CrossIcon from "./close-icon.svg";
 
 export const MobileBottomDrawer = ({

@@ -1,8 +1,9 @@
 import clsx from "clsx";
+import type { ReactNode } from "react";
 
 interface SettingRecordProps {
-  icon: React.ReactNode;
-  title: React.ReactNode;
+  icon: ReactNode;
+  title: ReactNode;
   className?: string;
 }
 

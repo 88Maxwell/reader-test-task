@@ -1,8 +1,8 @@
-import { useEffect } from "react";
+import { type RefObject, useEffect } from "react";
 
 const checkIsOutside = <T extends HTMLElement>(
   target: Node,
-  ref: React.RefObject<T>,
+  ref: RefObject<T>,
 ) => {
   const isRefArray = Array.isArray(ref);
 
@@ -14,14 +14,14 @@ const checkIsOutside = <T extends HTMLElement>(
 };
 
 export function useClickOutside<T extends HTMLElement>(
-  anchorRef: React.RefObject<T>,
-  containerRef: React.RefObject<T>,
+  anchorRef: RefObject<T>,
+  containerRef: RefObject<T>,
   cb: () => void,
 ) {
   useEffect(() => {
     const handleClickOutside = (event: MouseEvent) => {
       const target = event.target as Node;
-      if (!target || !target.isConnected) return;
+      if (!target?.isConnected) return;
       const targetParent = target.parentNode;
 
       const isTargetAnchor = anchorRef.current === target;

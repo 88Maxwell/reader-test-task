@@ -14,7 +14,18 @@
   "linter": {
     "enabled": true,
     "rules": {
-      "all": true
+      "all": true,
+      "performance": {
+        "noBarrelFile": "off"
+      },
+      "style": {
+        "noDefaultExport": "off",
+        "useFilenamingConvention": "off",
+        "useBlockStatements": "off"
+      },
+      "suspicious": {
+        "noExplicitAny": "warn"
+      }
     }
   }
 }

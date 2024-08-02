@@ -1,4 +1,6 @@
-export type Option<Label = React.ReactNode, Value = string> = {
+import type { ReactNode } from "react";
+
+export type Option<Label = ReactNode, Value = string> = {
   value: Value;
   label: Label;
 };
