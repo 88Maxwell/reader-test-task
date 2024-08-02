@@ -21,6 +21,10 @@ const config: Config = {
         "1.5xl": "0.875rem",
         "2.5xl": "1.125rem",
       },
+      borderColor: {},
+      borderOpacity: {
+        12: ".12",
+      },
       colors: {
         "light-gray-600": "#424957",
         "dark-icon-primary": "#D9D9D9",
@@ -40,6 +44,12 @@ const config: Config = {
         "dark-background-field-contrast": "#363636",
         "dark-stroke-tertiary": "#555",
         "dark-label-disabled": "#636567",
+        "dark-background-secondary": "#232323",
+        "light-gray-500": "#F2F3F5",
+        "light-other-track-background": "#E1E3E6",
+        "light-gray-100": "#FBFBFB",
+        "dark-label-secondary": "#969A9F",
+        "light-label-light-secondary-text": "#71747A",
       },
     },
   },

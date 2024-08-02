@@ -36,8 +36,8 @@ export const SelectCarousel = <L extends React.ReactNode, V extends string>({
           key={`toggle-${o.value}-option`}
           onClick={getChangeHandler(o)}
           className={clsx("p-3 w-1/2 text-xs dark:text-dark-label-primary", {
-            "bg-dark-brand-brand": o.value === currentOption.value,
-            "bg-dark-background-field-contrast":
+            "bg-dark-brand-brand text-white": o.value === currentOption.value,
+            "border bg-light-gray-500 border-black/10 dark:border-none dark:bg-dark-background-field-contrast":
               o.value !== currentOption.value,
             "rounded-s-2.5xl": index === 0,
             "rounded-e-2.5xl": index === 1,

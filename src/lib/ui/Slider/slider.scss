@@ -1,7 +1,8 @@
 :root {
   --dark-primary: #8e3f66;
-  --dark-thumb: #dadbdc;
+  --dark-thumb: #FBFBFB;
   --dark-track-filled: #555;
+  --light-other-track-background: #E1E3E6;
 }
 
 input[type="range"] {
@@ -20,7 +21,7 @@ input[type="range"] {
     width: 100%;
     height: 4px;
     cursor: pointer;
-    background-color: var(--dark-track-filled);
+    background-color: var(--light-other-track-background);
     border-radius: 14px;
     border: none;
   }
@@ -29,7 +30,7 @@ input[type="range"] {
     width: 100%;
     height: 4px;
     cursor: pointer;
-    background-color: var(--dark-track-filled);
+    background-color: var(--light-other-track-background);
     border-radius: 14px;
     border: none;
   }
@@ -107,5 +108,23 @@ input[type="range"] {
       background: var(--dark-thumb);
       transform: scale(1.1);
     }
+  }
+}
+
+html.dark input[type="range"] {
+  &::-webkit-slider-runnable-track {
+    background-color: var(--dark-track-filled);
+  }
+  &::-moz-range-track {
+    background-color: var(--dark-track-filled);
+  }
+}
+
+html.light input[type="range"] {
+  &::-webkit-slider-runnable-track {
+    background-color: var(--light-other-track-background);
+  }
+  &::-moz-range-track {
+    background-color: var(--light-other-track-background);
   }
 }

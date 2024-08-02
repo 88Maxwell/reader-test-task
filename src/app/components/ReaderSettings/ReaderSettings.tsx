@@ -31,9 +31,9 @@ export function ReaderSettings() {
           name="visibility"
         />
         <SettingRecordField icon={<FontsIcon />} title="Розмір тексту" />
-        <Slider />
+        <Slider leftTitle="Більше" rightTitle="Менше" />
         <SettingRecordField icon={<TextIcon />} title="Ширина полів" />
-        <Slider />
+        <Slider leftTitle="Більше" rightTitle="Менше" />
         <SettingRecordField icon={<ThemeIcon />} title="Колір теми" />
         <Toggle
           option1={themeOptionsMap.light}

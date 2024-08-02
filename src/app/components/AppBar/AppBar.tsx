@@ -29,7 +29,7 @@ export function AppBar() {
     <nav
       className={clsx(
         "flex flex-row justify-between px-8 py-4.5",
-        "dark:bg-dark-background-header-bg",
+        "dark:bg-[#2C2D30]", // TODO: add color to design
       )}
     >
       <section className="flex flex-row gap-4">

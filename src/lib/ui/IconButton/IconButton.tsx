@@ -13,7 +13,7 @@ export const IconButton = forwardRef(
       disabled={disabled}
       className={clsx(
         "text-inherit",
-        { "dark:text-dark-label-disabled": disabled }, // TODO: NO colors for white theme in design
+        // { "dark:text-dark-label-disabled": disabled }, // TODO: NO colors for light theme in design.
         className,
       )}
       {...props}

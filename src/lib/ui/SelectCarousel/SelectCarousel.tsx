@@ -46,7 +46,8 @@ export const SelectCarousel = ({
   return (
     <div
       className={clsx(
-        "flex flex-row w-full justify-between border border-solid py-2 px-4 rounded-2.5xl",
+        "flex flex-row w-full justify-between items-center border border-solid py-2 px-4 rounded-2.5xl",
+        "bg-light-gray-500 text-light-label-light-main-text",
         "dark:bg-dark-background-field-contrast dark:border-dark-stroke-divider-primary",
         className,
       )}
@@ -63,13 +64,13 @@ export const SelectCarousel = ({
         onClick={handlePrev}
         className="rotate-180"
       >
-        <ArrowRightIcon />
+        <ArrowRightIcon className="text-dark-brand-brand dark:text-dark-label-primary" />
       </IconButton>
       <span className="text-sm dark:text-dark-label-primary">
         {currentOption.label}
       </span>
       <IconButton disabled={isCurrentOptionLast} onClick={handleNext}>
-        <ArrowRightIcon />
+        <ArrowRightIcon className="text-dark-brand-brand dark:text-dark-label-primary" />
       </IconButton>
     </div>
   );

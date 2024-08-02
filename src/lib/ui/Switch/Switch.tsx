@@ -7,8 +7,9 @@ export const Switch = () => (
     <div
       className={clsx(
         "peer peer-checked:bg-dark-brand-brand peer-checked:after:translate-x-full",
-        "h-[25px] w-12 rounded-full bg-switch-base dark:bg-dark-background-tertiary",
-        "after:absolute after:left-[2px] after:top-0.5 after:h-5 after:w-5 after:rounded-full after:bg-white after:transition-all after:content-['']",
+        "h-[25px] w-10 rounded-full bg-switch-base",
+        "after:absolute after:left-[5px] after:top-[5px] after:h-[15px] after:w-[15px] after:rounded-full after:bg-white after:transition-all after:content-['']",
+        "dark:bg-dark-background-tertiary",
       )}
     />
   </label>
