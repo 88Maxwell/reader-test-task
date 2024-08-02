@@ -14,6 +14,9 @@ const config: Config = {
         4.5: "1.125rem",
         7.5: "1.875rem",
       },
+      screens: {
+        zero: "0px"
+      },
       fontSize: {
         "3.5xl": "2rem",
       },

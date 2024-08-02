@@ -1,34 +1,20 @@
 "use client";
 
-import { MobileReaderBottomSwipeZone } from "@/domains/reader/components/MobileReaderBottomSwipeZone";
 import { MobileReaderCenterTapZone } from "@/domains/reader/components/MobileReaderCenterTapZone/MobileReaderCenterTapZone";
 import { useScrollBottom } from "@/lib/hooks/useScrollBottom";
-import { MobileBottomDrawer } from "@/lib/ui/MobileBottomDrawer";
+import { useToggle } from "@/lib/hooks/useToggle";
 import clsx from "clsx";
-import { useState } from "react";
 import { AppBar } from "./components/AppBar/AppBar";
-import { ReaderSettings } from "./components/ReaderSettings/ReaderSettings";
 import { TEXT } from "./stubData";
 
 export default function Home() {
-  const [appBarShown, setAppBarShow] = useState(true);
-  const [isSettingOpen, setIsSettingOpen] = useState(false);
-  const handleOpenSetting = () => setIsSettingOpen(true);
-  const handleCloseSetting = () => setIsSettingOpen(false);
-
-  const showAppBar = () => setAppBarShow(true);
-  const hideAppBar = () => setAppBarShow(false);
+  const [appBarShown, { on: showAppBar, off: hideAppBar }] = useToggle(true);
 
   useScrollBottom(hideAppBar, showAppBar);
 
   return (
     <>
-      <AppBar
-        isSettingsOpen={isSettingOpen}
-        onCloseSettings={handleCloseSetting}
-        onOpenSettings={handleOpenSetting}
-        isOpen={appBarShown}
-      />
+      <AppBar isOpen={appBarShown} />
       <main
         className={clsx(
           "min-h-screen pb-8 pt-[88px] px-4 md:pb-14 md:pt-[120px] md:px-[270px]",
@@ -42,11 +28,7 @@ export default function Home() {
             <p key={v}>{v}</p>
           ))}
         </div>
-        <MobileBottomDrawer isOpen={isSettingOpen} onClose={handleCloseSetting}>
-          <ReaderSettings className="p-6" />
-        </MobileBottomDrawer>
       </main>
-      <MobileReaderBottomSwipeZone onSwipedUp={handleOpenSetting} />
       <MobileReaderCenterTapZone onTap={showAppBar} />
     </>
   );

@@ -1,5 +1,4 @@
 import { useClickOutside } from "@/lib/hooks/useClickOutside";
-import clsx from "clsx";
 import { useRef } from "react";
 import type { PopoverProps } from "./PopoverTypes";
 
@@ -19,10 +18,7 @@ export const Popover = ({
 
   if (!isOpen) return null;
   return (
-    <div
-      ref={containerRef}
-      className={clsx("bg-white dark:bg-dark-background-secondary", className)}
-    >
+    <div ref={containerRef} className={className}>
       {children}
     </div>
   );

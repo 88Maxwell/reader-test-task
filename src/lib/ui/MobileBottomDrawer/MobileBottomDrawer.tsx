@@ -1,5 +1,6 @@
 "use client";
 
+import { Media } from "@/domains/common/components/MediaProvider";
 import clsx from "clsx";
 import { Backdrop } from "../Backdrop";
 import { IconButton } from "../IconButton";
@@ -14,14 +15,16 @@ export const MobileBottomDrawer = ({
 }: MobileBottomDrawerProps) => {
   if (!isOpen) return null;
   return (
-    <>
+    <Media
+      className="bg-white dark:bg-dark-background-secondary"
+      lessThan={"md"}
+    >
       {isOpen && <Backdrop onClose={onClose} />}
       <div
         className={clsx(
           "fixed bottom-0 left-0 w-full max-w-md bg-white shadow-md rounded-t-lg z-20 ",
           "transform transition-transform duration-300 ease-out",
           { "translate-y-0": isOpen, "translate-y-full": !isOpen },
-          "bg-white dark:bg-dark-background-secondary",
           className,
         )}
       >
@@ -29,6 +32,7 @@ export const MobileBottomDrawer = ({
           <div className="w-10 h-1 bg-gray-400 rounded-full" />
         </div>
         <IconButton
+          onClick={onClose}
           className={clsx(
             "rounded-full absolute top-4 right-4",
             "bg-light-icon-outline-medium text-light-label-light-main-text",
@@ -37,8 +41,8 @@ export const MobileBottomDrawer = ({
         >
           <CrossIcon />
         </IconButton>
-        {children}
+        <div>{children}</div>
       </div>
-    </>
+    </Media>
   );
 };

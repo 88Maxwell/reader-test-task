@@ -12,9 +12,9 @@
     "test:lint:fix": "npx @biomejs/biome lint --fix src",
     "test:lint": "npx @biomejs/biome check src",
     "test:lint:summary": "npx @biomejs/biome check --reporter=summary src"
-    
   },
   "dependencies": {
+    "@artsy/fresnel": "^7.1.4",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.1.1",
     "next": "14.2.5",
