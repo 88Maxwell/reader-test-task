@@ -20,4 +20,7 @@
   .hidden-mobile-block {
     @apply hidden md:block
   }
+  .hidden-mobile-flex {
+    @apply hidden md:flex
+  }
 }

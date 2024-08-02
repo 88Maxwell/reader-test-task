@@ -13,13 +13,14 @@ import SettingsIcon from "./assets/icons/settings_icon.svg";
 import ArrowLeftIcon from "./assets/icons/arrow-left.svg";
 import ShareIcon from "./assets/icons/share_icon.svg";
 import { SettingPopover } from "../SettingPopover/SettingPopover";
+import { AppBarProps } from "./AppBarTypes";
 
 const fakeUser = {
   name: "Fake name",
   avatarUrl: "https://i.pravatar.cc/24?u=a042581f4e29026704d",
 };
 
-export function AppBar() {
+export function AppBar({ isOpen }: AppBarProps) {
   const settingsButtonRef = useRef<HTMLButtonElement>(null);
   const [isSettingOpen, setIsSettingOpen] = useState(false);
   const handleOpenSetting = () => setIsSettingOpen(true);
@@ -28,8 +29,12 @@ export function AppBar() {
   return (
     <nav
       className={clsx(
-        "flex flex-row justify-between px-8 py-4.5 border-b border-light-stroke-divider-primary",
+        "fixed top-0 left-0 right-0",
+        "flex flex-row justify-between px-8 py-4.5 border-b",
+        "border-light-stroke-divider-primary",
         "dark:bg-[#2C2D30] dark:border-none", // TODO: add color to design
+        "transition-opacity duration-300",
+        { "opacity-100": isOpen, "opacity-0": !isOpen },
       )}
     >
       <section className="flex flex-row gap-4">
@@ -39,7 +44,7 @@ export function AppBar() {
         <h1 className="text-light-label-light-main-text dark:text-dark-label-sub-head mr-2 hidden-mobile-block">
           Назва книги
         </h1>
-        <div className="flex flex-row items-center gap-2 hidden-mobile-block">
+        <div className="flex-row items-center gap-2 hidden-mobile-flex">
           <Avatar
             width={24}
             height={24}

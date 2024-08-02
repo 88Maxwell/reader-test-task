@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
-import { PropsWithChildren } from "react";
+import { PropsWithChildren, useState } from "react";
 import { ThemeProvider } from "@/domains/common/components/ThemeProvider";
+import { MobileReaderCenterTapZone } from "@/domains/reader/components/MobileReaderCenterTapZone/MobileReaderCenterTapZone";
 import { AppBar } from "./components/AppBar/AppBar";
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,7 +18,6 @@ export default function RootLayout({ children }: PropsWithChildren) {
     <html lang="en" suppressHydrationWarning>
       <body className={inter.className}>
         <ThemeProvider>
-          <AppBar />
           <main>{children}</main>
         </ThemeProvider>
       </body>
