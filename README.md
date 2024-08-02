@@ -1,1 +1,4 @@
-# TEST TASK STATUS **INPROGRESS**
+# TEST TASK STATUS (READY TO REVIEW)
+
+## Перелік запитань, уточнень, зауважень щодо цього ТЗ
+## 

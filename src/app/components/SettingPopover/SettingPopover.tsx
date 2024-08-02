@@ -7,7 +7,7 @@ export const SettingPopover = ({
   className,
   ...props
 }: Omit<PopoverProps, "children">) => (
-  <Media className={className} greaterThan={"md"}>
+  <Media className={className} greaterThanOrEqual={"md"}>
     <Popover
       {...props}
       className={clsx(

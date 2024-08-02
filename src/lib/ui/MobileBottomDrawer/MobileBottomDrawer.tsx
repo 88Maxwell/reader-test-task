@@ -21,7 +21,7 @@ export const MobileBottomDrawer = ({
         className={clsx(
           "shadow-drawer",
           "bg-white dark:bg-dark-background-secondary",
-          "fixed bottom-0 left-0 w-full max-w-md bg-white shadow-md rounded-t-lg z-20 ",
+          "fixed bottom-0 left-0 right-0 w-full bg-white shadow-md rounded-t-lg z-20 ",
           "transform transition-transform duration-300 ease-out",
           { "translate-y-0": isOpen, "translate-y-full": !isOpen },
           className,
