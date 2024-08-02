@@ -31,7 +31,7 @@ export default function Home() {
       />
       <main
         className={clsx(
-          "min-h-screen pb-8 pt-24 px-4 md:pb-14 md:pt-[120px] md:px-[270px]",
+          "min-h-screen pb-8 pt-[88px] px-4 md:pb-14 md:pt-[120px] md:px-[270px]",
           "bg-white text-light-label-light-main-text",
           "dark:bg-black dark:text-dark-label-primary",
         )}

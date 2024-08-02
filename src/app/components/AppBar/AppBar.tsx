@@ -32,7 +32,7 @@ export function AppBar({
     <nav
       className={clsx(
         "fixed top-0 left-0 right-0",
-        "flex flex-row justify-between px-8 py-4.5 border-b",
+        "flex flex-row justify-between p-4 md:px-8 md:py-4.5 border-b",
         "border-light-stroke-divider-primary",
         "dark:bg-[#2C2D30] dark:border-none", // TODO: add color to design
         "transition-opacity duration-300",
