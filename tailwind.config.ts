@@ -28,6 +28,11 @@ const config: Config = {
       borderOpacity: {
         12: ".12",
       },
+      boxShadow: {
+        "drawer": "0px -4px 6px -4px rgba(24, 39, 75, 0.12), 0px -8px 40px -4px rgba(42, 44, 50, 0.30)",
+        "500": "0px 6px 14px -6px rgba(0, 0, 0, 0.11), 0px 10px 32px -4px rgba(0, 0, 0, 0.09)",
+        "800": "0px 8px 28px -6px rgba(0, 0, 0, 0.12), 0px 18px 88px -4px rgba(0, 0, 0, 0.08)"
+      },
       colors: {
         "light-gray-600": "#424957",
         "dark-icon-primary": "#D9D9D9",

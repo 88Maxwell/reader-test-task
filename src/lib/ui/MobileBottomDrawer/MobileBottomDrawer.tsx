@@ -15,13 +15,12 @@ export const MobileBottomDrawer = ({
 }: MobileBottomDrawerProps) => {
   if (!isOpen) return null;
   return (
-    <Media
-      className="bg-white dark:bg-dark-background-secondary"
-      lessThan={"md"}
-    >
+    <Media lessThan={"md"}>
       {isOpen && <Backdrop onClose={onClose} />}
       <div
         className={clsx(
+          "shadow-drawer",
+          "bg-white dark:bg-dark-background-secondary",
           "fixed bottom-0 left-0 w-full max-w-md bg-white shadow-md rounded-t-lg z-20 ",
           "transform transition-transform duration-300 ease-out",
           { "translate-y-0": isOpen, "translate-y-full": !isOpen },
@@ -35,8 +34,8 @@ export const MobileBottomDrawer = ({
           onClick={onClose}
           className={clsx(
             "rounded-full absolute top-4 right-4",
-            "bg-light-icon-outline-medium text-light-label-light-main-text",
-            "dark:bg-dark-icon-primary dark:text-dark-background-field-contrast",
+            "bg-light-icon-outline-medium/10 text-light-label-light-main-text/50",
+            "dark:text-dark-icon-secondary dark:bg-dark-background-field-contrast",
           )}
         >
           <CrossIcon />

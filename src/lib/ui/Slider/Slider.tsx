@@ -4,10 +4,11 @@ import type { SliderProps } from "./SliderTypes";
 
 export const Slider = ({ className, leftTitle, rightTitle }: SliderProps) => (
   <div className={className}>
-    <input type="range" />
+    <input className="mb-2" type="range" />
     <div
       className={clsx(
-        "flex flex-row justify-between text-[13px]/[17px] text-light-label-light-secondary-text",
+        "flex flex-row justify-between text-[13px]/[17px]",
+        "text-light-label-light-secondary-text",
         "dark:text-dark-label-secondary",
       )}
     >

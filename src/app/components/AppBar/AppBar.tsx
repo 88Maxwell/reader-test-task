@@ -27,7 +27,7 @@ export function AppBar({ isOpen }: AppBarProps) {
   const settingsButtonRef = useRef<HTMLButtonElement>(null);
   const [isSettingsOpen, { on: onOpenSettings, off: onCloseSettings }] =
     useToggle();
-  console.log({ isSettingsOpen });
+
   return (
     <>
       <nav
@@ -82,6 +82,7 @@ export function AppBar({ isOpen }: AppBarProps) {
           >
             <SettingsIcon />
             <SettingPopover
+              className="absolute top-9 -right-7.5"
               anchorRef={settingsButtonRef}
               isOpen={isSettingsOpen}
               onClose={onCloseSettings}

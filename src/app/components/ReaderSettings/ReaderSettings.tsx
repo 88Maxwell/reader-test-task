@@ -41,7 +41,7 @@ export function ReaderSettings({ className }: ReaderSettingsProps) {
           title="Ширина полів"
         />
         <Slider
-          className="hidden-mobile-flex"
+          className="hidden-mobile-block"
           leftTitle="Менше"
           rightTitle="Більше"
         />
@@ -73,7 +73,7 @@ export function ReaderSettings({ className }: ReaderSettingsProps) {
         <Switch />
       </div>
       <Divider className="hidden-mobile-block my-4" />
-      <div className="hidden-mobile-block flex flex-row justify-between">
+      <div className="hidden-mobile-flex flex-row justify-between">
         <span>Книжний режим прочитання</span>
         <Switch />
       </div>
